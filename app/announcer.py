@@ -18,7 +18,6 @@ class MessageAnnouncer:
     return q
   
   def announce(self, msg, event=None):
-    print(f"Announcing a {event} message to {len(self.listeners)} listeners!")
     msg = format_sse(msg, event)
     for i in reversed(range(len(self.listeners))):
       try:
